@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; }
+    select, button { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h3>Select a Report:</h3>
+
+  <select id="reportDropdown" onchange="changeReport()">
+    <option value="https://mybiz-globalpsa.msappproxy.net/Reports/report/DLYOPS/Daily_Ops_Perf?rs:embed=true&amp;rc:Toolbar=falseframeborder="0"="">DailyOps</option>
+    <option value=""https://mybiz-globalpsa.msappproxy.net/Reports/report/CMR/CTs_Forecast_Status?rs:embed=true&amp;rc:Toolbar=falseframeborder="0"="">CTs_Forecast_Status</option>
+    <option value="https://www.google.com">Google</option>
+  </select>
+
+  <iframe id="reportFrame" src="https://mybiz-globalpsa.msappproxy.net/Reports/report/DLYOPS/Daily_Ops_Perf?rs:embed=true&amp;rc:Toolbar=falseframeborder="0"="" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+
+  <script>
+    function changeReport() {
+      var url = document.getElementById("reportDropdown").value;
+      document.getElementById("reportFrame").src = url;
+    }
+  </script>
+</body>
+</html>
